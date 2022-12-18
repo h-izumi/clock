@@ -4,5 +4,8 @@
   "description": "The digital clock on Web browser.",
   "repository": "https://github.com/h-izumi/clock.git",
   "author": "Hayato IZUMI <h-izumi@9uelle.jp>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.16.9"
+  }
 }
