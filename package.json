@@ -5,6 +5,9 @@
   "repository": "https://github.com/h-izumi/clock.git",
   "author": "Hayato IZUMI <h-izumi@9uelle.jp>",
   "license": "MIT",
+  "scripts": {
+    "build": "node esbuild.mjs"
+  },
   "devDependencies": {
     "esbuild": "^0.16.9"
   }
