@@ -10,7 +10,7 @@ License
 
 Copyright (c) 2022 Hayato IZUMI.
 
-### DSEG7Classic-Italic
+### DSEG14Classic-Italic
 
 * Copyright (c) 2020, keshikan (<https://www.keshikan.net>),
 with Reserved Font Name "DSEG".

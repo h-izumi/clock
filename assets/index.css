@@ -1,6 +1,6 @@
 @font-face {
     font-family: "DSEG7Classic-Italic";
-    src: url("/assets/DSEG7Classic-Italic.046.woff2");
+    src: url("/assets/DSEG14Classic-Italic.046.woff2");
 }
 body {
     margin: 0;
@@ -29,7 +29,6 @@ a:hover {
     height: 100vh;
     justify-content: center;
     align-items: center;
-    
 }
 .clock {
     margin: 0;
