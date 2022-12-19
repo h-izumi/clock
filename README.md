@@ -21,7 +21,7 @@ Special Thanks
 
 ### Font
 
-* DSEG7 Classic Style
+* DSEG14 Classic Style
   * <https://github.com/keshikan/DSEG>
 
 [site]: https://clock.9uelle.jp/
