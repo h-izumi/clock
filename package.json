@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "dseg": "^0.46.0",
-    "esbuild": "^0.16.9"
+    "esbuild": "^0.16.9",
+    "esbuild-sass-plugin": "^2.4.4"
   }
 }
