@@ -10,19 +10,21 @@ const cacheBusting = options => ({
     build.onEnd(() => {
       let html = fs.readFileSync("index.html", "utf8");
 
-      const regexFile = /(?<name>.+)(?<!-\w{32})\.js$/;
+      const regexFile = /(?<name>.+)(?<!-\w{32})\.(?<ext>(js|css))$/;
       fs.readdirSync("./dist").forEach(fileName => {
         const originalFilePath = `./dist/${fileName}`;
-        const fileNameWithoutExt = fileName.match(regexFile)?.groups.name;
+        console.log(originalFilePath);
+        const match = fileName.match(regexFile);
+        const fileNameWithoutExt = match?.groups.name;
         if (fileNameWithoutExt) {
           const fileData = fs.readFileSync(originalFilePath, "utf-8");
-          const fileNameWithHash = `${fileNameWithoutExt}-${md5hex(fileData)}.js`;
+          const fileNameWithHash = `${fileNameWithoutExt}-${md5hex(fileData)}.${match.groups.ext}`;
           fs.writeFileSync(originalFilePath, fileData.replace(fileName, fileNameWithHash));
           fs.renameSync(originalFilePath, `./dist/${fileNameWithHash}`);
           fs.renameSync(`${originalFilePath}.map`, `./dist/${fileNameWithHash}.map`);
-          html = html.replace(new RegExp(`${fileNameWithoutExt}.*\.js`), fileNameWithHash);
+          html = html.replace(new RegExp(`${fileNameWithoutExt}.*\.${match.groups.ext}`), fileNameWithHash);
         }
-        if (fs.existsSync(originalFilePath)){
+        if (fs.existsSync(originalFilePath)) {
           fs.rmSync(originalFilePath);
         }
       });

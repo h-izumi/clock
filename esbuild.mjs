@@ -1,16 +1,20 @@
 import { build } from "esbuild";
 
+import { sassPlugin } from "esbuild-sass-plugin";
+
 import { copyFont } from "./scripts/copy-font.mjs";
 import { cacheBusting } from "./scripts/cache-busting.mjs";
 
 const options = {
-  entryPoints: ["./src/index.js"],
+  entryPoints: ["./src/index.js", "./src/index.scss"],
   bundle: true,
   minify: true,
   sourcemap: "linked",
-  outfile: "./dist/index.js",
+  outdir: "dist",
+  external: ["*.woff2"],
   plugins: [
-    copyFont(),
+    sassPlugin(),
+    // copyFont(),
     cacheBusting(),
   ]
 };
